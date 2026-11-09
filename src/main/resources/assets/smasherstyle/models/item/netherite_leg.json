@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:item/generated",
+  "texture": {
+    "layer0": "smasherstyle:item/netherite_leg"
+  }
+
+
+}

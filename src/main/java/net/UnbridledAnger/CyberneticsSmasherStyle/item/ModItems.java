@@ -9,7 +9,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 public class ModItems {
     public static final DeferredRegister.Items ITEMS=DeferredRegister.createItems(SmasherStyle.MODID);
 
-    public static final DeferredItem<Item> netherite_leg=ITEMS.register("Netherite Leg",
+    public static final DeferredItem<Item> netherite_leg=ITEMS.register("netherite_leg",
             ()->new Item(new Item.Properties()));
 
     public static void register(IEventBus eventBus){

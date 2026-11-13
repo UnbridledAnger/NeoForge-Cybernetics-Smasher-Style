@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "smasherstyle:block/blankmachine",
+    "up": "smasherstyle:block/blankmachine",
+    "north": "smasherstyle:block/advancedrobosurgeon",
+    "east": "smasherstyle:block/advancedrobosurgeon",
+    "south": "smasherstyle:block/advancedrobosurgeon",
+    "west": "smasherstyle:block/advancedrobosurgeon",
+    "particle": "smasherstyle:block/blankmachine"
+  },
+  "render_type": "solid"
+}

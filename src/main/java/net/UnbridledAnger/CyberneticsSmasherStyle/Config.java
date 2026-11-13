@@ -1,36 +1,80 @@
+
 package net.UnbridledAnger.CyberneticsSmasherStyle;
 
-import java.util.List;
-
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceLocation;
 import net.neoforged.neoforge.common.ModConfigSpec;
 
-// An example config class. This is not required, but it's a good idea to have one to keep your config organized.
-// Demonstrates how to use Neo's config APIs
 public class Config {
-    private static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
 
-    public static final ModConfigSpec.BooleanValue LOG_DIRT_BLOCK = BUILDER
-            .comment("Whether to log the dirt block on common setup")
-            .define("logDirtBlock", true);
+    private static final ModConfigSpec.Builder BUILDER =
+            new ModConfigSpec.Builder();
 
-    public static final ModConfigSpec.IntValue MAGIC_NUMBER = BUILDER
-            .comment("A magic number")
-            .defineInRange("magicNumber", 42, 0, Integer.MAX_VALUE);
+    static {
+        BUILDER.push("cyberware_capacity");
 
-    public static final ModConfigSpec.ConfigValue<String> MAGIC_NUMBER_INTRODUCTION = BUILDER
-            .comment("What you want the introduction message to be for the magic number")
-            .define("magicNumberIntroduction", "The magic number is... ");
+        BRAIN_CAPACITY = BUILDER
+                .comment("Maximum cyberware slots for the brain.")
+                .defineInRange("brainCapacity", 10, 5, 100);
 
-    // a list of strings that are treated as resource locations for items
-    public static final ModConfigSpec.ConfigValue<List<? extends String>> ITEM_STRINGS = BUILDER
-            .comment("A list of items to log on common setup.")
-            .defineListAllowEmpty("items", List.of("minecraft:iron_ingot"), () -> "", Config::validateItemName);
+        EYES_CAPACITY = BUILDER
+                .comment("Maximum cyberware slots for the eyes.")
+                .defineInRange("eyesCapacity", 10, 5, 100);
 
-    static final ModConfigSpec SPEC = BUILDER.build();
+        HEART_CAPACITY = BUILDER
+                .comment("Maximum cyberware slots for the heart.")
+                .defineInRange("heartCapacity", 12, 6, 100);
 
-    private static boolean validateItemName(final Object obj) {
-        return obj instanceof String itemName && BuiltInRegistries.ITEM.containsKey(ResourceLocation.parse(itemName));
+        LUNGS_CAPACITY = BUILDER
+                .comment("Maximum cyberware slots for the lungs.")
+                .defineInRange("lungsCapacity", 12, 6, 100);
+
+        ORGANS_CAPACITY = BUILDER
+                .comment("Maximum cyberware slots for the organs.")
+                .defineInRange("organsCapacity", 12, 6, 100);
+
+        RIGHT_ARM_CAPACITY = BUILDER
+                .comment("Maximum cyberware slots for the right arm.")
+                .defineInRange("rightArmCapacity", 12, 6, 100);
+
+        LEFT_ARM_CAPACITY = BUILDER
+                .comment("Maximum cyberware slots for the left arm.")
+                .defineInRange("leftArmCapacity", 12, 6, 100);
+
+        RIGHT_LEG_CAPACITY = BUILDER
+                .comment("Maximum cyberware slots for the right leg.")
+                .defineInRange("rightLegCapacity", 10, 5, 100);
+
+        LEFT_LEG_CAPACITY = BUILDER
+                .comment("Maximum cyberware slots for the left leg.")
+                .defineInRange("leftLegCapacity", 10, 5, 100);
+
+        MUSCLE_CAPACITY = BUILDER
+                .comment("Maximum cyberware slots for the muscles.")
+                .defineInRange("muscleCapacity", 10, 5, 100);
+
+        BONE_CAPACITY = BUILDER
+                .comment("Maximum cyberware slots for the bones.")
+                .defineInRange("boneCapacity", 10, 5, 100);
+
+        SKIN_CAPACITY = BUILDER
+                .comment("Maximum cyberware slots for the skin.")
+                .defineInRange("skinCapacity", 10, 5, 100);
+
+        BUILDER.pop();
     }
+
+    public static final ModConfigSpec.IntValue BRAIN_CAPACITY;
+    public static final ModConfigSpec.IntValue EYES_CAPACITY;
+    public static final ModConfigSpec.IntValue HEART_CAPACITY;
+    public static final ModConfigSpec.IntValue LUNGS_CAPACITY;
+    public static final ModConfigSpec.IntValue ORGANS_CAPACITY;
+    public static final ModConfigSpec.IntValue RIGHT_ARM_CAPACITY;
+    public static final ModConfigSpec.IntValue LEFT_ARM_CAPACITY;
+    public static final ModConfigSpec.IntValue RIGHT_LEG_CAPACITY;
+    public static final ModConfigSpec.IntValue LEFT_LEG_CAPACITY;
+    public static final ModConfigSpec.IntValue MUSCLE_CAPACITY;
+    public static final ModConfigSpec.IntValue BONE_CAPACITY;
+    public static final ModConfigSpec.IntValue SKIN_CAPACITY;
+
+    public static final ModConfigSpec SERVER_SPEC = BUILDER.build();
+
 }

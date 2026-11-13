@@ -137,6 +137,17 @@ dependencies {
     // For more info:
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
+
+    repositories {
+        // For mods hosted on CurseForge
+        maven {
+            url = "https://cursemaven.com"
+            content {
+                includeGroup "curse.maven"
+            }
+        }
+    }
+    implementation "curse.maven:cybernetics-1430192:8435586"
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.

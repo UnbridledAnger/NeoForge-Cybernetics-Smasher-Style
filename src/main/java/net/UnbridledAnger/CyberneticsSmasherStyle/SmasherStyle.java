@@ -1,6 +1,7 @@
 package net.UnbridledAnger.CyberneticsSmasherStyle;
 
 import net.UnbridledAnger.CyberneticsSmasherStyle.item.ModItems;
+import net.UnbridledAnger.CyberneticsSmasherStyle.block.ModBlocks;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -37,13 +38,15 @@ public class SmasherStyle {
         NeoForge.EVENT_BUS.register(this);
 
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
+
 
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
 
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
-        modContainer.registerConfig(ModConfig.Type.COMMON, Config.SERVER_SPEC);
+
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {
@@ -52,8 +55,9 @@ public class SmasherStyle {
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-        if (event.getTabKey()==CreativeModeTabs.INGREDIENTS){
+        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.netherite_leg);
+            event.accept(ModBlocks.ADVANCEDROBOSURGEON);
         }
     }
 

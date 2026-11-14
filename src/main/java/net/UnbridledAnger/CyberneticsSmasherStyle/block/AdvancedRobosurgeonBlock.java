@@ -8,6 +8,7 @@ import com.perigrine3.createcybernetics.common.capabilities.ModAttachments;
 import com.perigrine3.createcybernetics.common.capabilities.PlayerCyberwareData;
 import com.perigrine3.createcybernetics.common.energy.ConditionalBlockPower;
 import com.perigrine3.createcybernetics.item.ModItems;
+import net.UnbridledAnger.CyberneticsSmasherStyle.block.entity.AdvancedRobosurgeonBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
@@ -54,7 +55,7 @@ public class AdvancedRobosurgeonBlock extends BaseEntityBlock {
 
     @Override
     public @Nullable BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-        return new RobosurgeonBlockEntity(pos, state);
+        return new AdvancedRobosurgeonBlockEntity(pos, state);
     }
 
     @Override
@@ -64,7 +65,7 @@ public class AdvancedRobosurgeonBlock extends BaseEntityBlock {
 
     @Override
     protected int getAnalogOutputSignal(BlockState state, Level level, BlockPos pos) {
-        if (!(level.getBlockEntity(pos) instanceof RobosurgeonBlockEntity blockEntity)) {
+        if (!(level.getBlockEntity(pos) instanceof AdvancedRobosurgeonBlockEntity blockEntity)) {
             return 0;
         }
 
@@ -80,8 +81,8 @@ public class AdvancedRobosurgeonBlock extends BaseEntityBlock {
 
         return createTickerHelper(
                 blockEntityType,
-                ModBlockEntities.ROBOSURGEON_BLOCKENTITY.get(),
-                RobosurgeonBlockEntity::serverTick
+                ModBlockEntities.ADVANCED_ROBOSURGEON_BLOCKENTITY.get(),
+                AdvancedRobosurgeonBlockEntity::serverTick
         );
     }
 
@@ -147,7 +148,7 @@ public class AdvancedRobosurgeonBlock extends BaseEntityBlock {
     @Override
     protected void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean movedByPiston) {
         if (state.getBlock() != newState.getBlock()) {
-            if (level.getBlockEntity(pos) instanceof RobosurgeonBlockEntity robosurgeonBlockEntity) {
+            if (level.getBlockEntity(pos) instanceof AdvancedRobosurgeonBlockEntity robosurgeonBlockEntity) {
                 robosurgeonBlockEntity.drops();
                 level.updateNeighbourForOutputSignal(pos, this);
             }
@@ -183,7 +184,7 @@ public class AdvancedRobosurgeonBlock extends BaseEntityBlock {
             return true;
         }
 
-        if (!(level.getBlockEntity(pos) instanceof RobosurgeonBlockEntity robosurgeonBlockEntity)) {
+        if (!(level.getBlockEntity(pos) instanceof AdvancedRobosurgeonBlockEntity robosurgeonBlockEntity)) {
             return true;
         }
 

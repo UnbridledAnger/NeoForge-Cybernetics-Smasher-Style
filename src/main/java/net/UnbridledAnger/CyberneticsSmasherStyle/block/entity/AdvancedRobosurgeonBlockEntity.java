@@ -1,7 +1,7 @@
 package net.UnbridledAnger.CyberneticsSmasherStyle.block.entity;
 
 import com.perigrine3.createcybernetics.api.CyberwareSlot;
-import com.perigrine3.createcybernetics.block.entity.ModBlockEntities;
+import net.UnbridledAnger.CyberneticsSmasherStyle.block.entity.ModBlockEntities;
 import com.perigrine3.createcybernetics.common.energy.ConditionalBlockPower;
 import com.perigrine3.createcybernetics.common.energy.ExternalEnergyInputTracker;
 import com.perigrine3.createcybernetics.common.energy.SyncingEnergyStorage;
@@ -96,7 +96,7 @@ public class AdvancedRobosurgeonBlockEntity extends BlockEntity implements MenuP
 
     public AdvancedRobosurgeonBlockEntity(BlockPos pos, BlockState blockState) {
         super(
-                ModBlockEntities.ROBOSURGEON_BLOCKENTITY.get(),
+                ModBlockEntities.ADVANCED_ROBOSURGEON_BLOCKENTITY.get(),
                 pos,
                 blockState
         );

@@ -2,6 +2,7 @@ package net.UnbridledAnger.CyberneticsSmasherStyle;
 
 import net.UnbridledAnger.CyberneticsSmasherStyle.item.ModItems;
 import net.UnbridledAnger.CyberneticsSmasherStyle.block.ModBlocks;
+import net.UnbridledAnger.CyberneticsSmasherStyle.block.entity.ModBlockEntities;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -39,7 +40,7 @@ public class SmasherStyle {
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
-
+        ModBlockEntities.register(modEventBus);
 
 
         // Register the item to a creative tab

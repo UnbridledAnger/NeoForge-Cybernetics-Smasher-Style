@@ -7,7 +7,7 @@ import com.perigrine3.createcybernetics.common.energy.ExternalEnergyInputTracker
 import com.perigrine3.createcybernetics.common.energy.SyncingEnergyStorage;
 import com.perigrine3.createcybernetics.common.surgery.DefaultOrgans;
 import com.perigrine3.createcybernetics.common.surgery.RobosurgeonSlotMap;
-import com.perigrine3.createcybernetics.screen.custom.surgery.robosurgeon.RobosurgeonMenu;
+import net.UnbridledAnger.CyberneticsSmasherStyle.screen.custom.surgery.advancedrobosurgeon.AdvancedRobosurgeonMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
@@ -559,7 +559,7 @@ public class AdvancedRobosurgeonBlockEntity extends BlockEntity implements MenuP
     @Override
     public Component getDisplayName() {
         return Component.translatable(
-                "gui.robosurgeon.title"
+                "gui.advancedrobosurgeon.title"
         );
     }
 
@@ -569,7 +569,7 @@ public class AdvancedRobosurgeonBlockEntity extends BlockEntity implements MenuP
             Inventory inventory,
             Player player
     ) {
-        return new RobosurgeonMenu(
+        return new AdvancedRobosurgeonMenu(
                 containerId,
                 inventory,
                 this
@@ -581,7 +581,7 @@ public class AdvancedRobosurgeonBlockEntity extends BlockEntity implements MenuP
             Inventory inventory,
             Player player
     ) {
-        return new RobosurgeonMenu(
+        return new AdvancedRobosurgeonMenu(
                 containerId,
                 inventory,
                 this

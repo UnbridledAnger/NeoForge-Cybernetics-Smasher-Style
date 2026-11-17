@@ -8,7 +8,6 @@ import com.perigrine3.createcybernetics.api.CyberwareSlot;
 import com.perigrine3.createcybernetics.api.ICyberwareItem;
 import com.perigrine3.createcybernetics.api.InstalledCyberware;
 import com.perigrine3.createcybernetics.client.render.RobosurgeonPreviewOverlayContext;
-import com.perigrine3.createcybernetics.client.surgery.SurgeryPreviewDiagnostics;
 import com.perigrine3.createcybernetics.common.capabilities.ModAttachments;
 import com.perigrine3.createcybernetics.common.capabilities.PlayerCyberwareData;
 import com.perigrine3.createcybernetics.common.humanity.DataIntegrityHandler;

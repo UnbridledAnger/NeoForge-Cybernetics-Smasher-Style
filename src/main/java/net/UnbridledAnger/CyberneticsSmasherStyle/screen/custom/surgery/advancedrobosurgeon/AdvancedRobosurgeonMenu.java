@@ -4,15 +4,14 @@ package net.UnbridledAnger.CyberneticsSmasherStyle.screen.custom.surgery.advance
 import com.perigrine3.createcybernetics.api.CyberwareSlot;
 import com.perigrine3.createcybernetics.api.ICyberwareItem;
 import com.perigrine3.createcybernetics.api.InstalledCyberware;
-import com.perigrine3.createcybernetics.block.ModBlocks;
+import net.UnbridledAnger.CyberneticsSmasherStyle.block.ModBlocks;
 import com.perigrine3.createcybernetics.block.RobosurgeonBlock;
-import com.perigrine3.createcybernetics.block.entity.RobosurgeonBlockEntity;
 import com.perigrine3.createcybernetics.common.capabilities.ModAttachments;
 import com.perigrine3.createcybernetics.common.capabilities.PlayerCyberwareData;
 import com.perigrine3.createcybernetics.common.energy.ConditionalBlockPower;
 import com.perigrine3.createcybernetics.common.surgery.DefaultOrgans;
 import com.perigrine3.createcybernetics.common.surgery.RobosurgeonSlotMap;
-import com.perigrine3.createcybernetics.screen.ModMenuTypes;
+import net.UnbridledAnger.CyberneticsSmasherStyle.screen.ModMenuTypes;
 import net.UnbridledAnger.CyberneticsSmasherStyle.block.AdvancedRobosurgeonBlock;
 import net.UnbridledAnger.CyberneticsSmasherStyle.block.entity.AdvancedRobosurgeonBlockEntity;
 import net.minecraft.core.BlockPos;
@@ -136,7 +135,7 @@ public class AdvancedRobosurgeonMenu extends AbstractContainerMenu {
                             type
                     );
 
-            AdvancedRobosurgeonSlots.add(slot);
+            advancedRobosurgeonSlots.add(slot);
             this.addSlot(slot);
         }
     }
@@ -398,7 +397,7 @@ public class AdvancedRobosurgeonMenu extends AbstractContainerMenu {
     @Override
     public boolean stillValid(Player player) {
         return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()),
-                player, ModBlocks.ADVANCED_ROBOSURGEON.get());
+                player, ModBlocks.ADVANCEDROBOSURGEON.get());
     }
 
     private boolean sideMatches(ItemStack stack, CyberwareSlot targetType) {

@@ -15,8 +15,8 @@ public class ModMenuTypes {
     public static final DeferredRegister<MenuType<?>> MENUS =
             DeferredRegister.create(Registries.MENU, SmasherStyle.MODID);
 
-    public static final DeferredHolder<MenuType<?>, MenuType<AdvancedRobosurgeonMenu>> ROBOSURGEON_MENU =
-            registerMenuType("robosurgeon_menu", AdvancedRobosurgeonMenu::new);
+    public static final DeferredHolder<MenuType<?>, MenuType<AdvancedRobosurgeonMenu>> ADVANCED_ROBOSURGEON_MENU =
+            registerMenuType("advanced_robosurgeon_menu", AdvancedRobosurgeonMenu::new);
 
     private static <T extends AbstractContainerMenu> DeferredHolder<MenuType<?>, MenuType<T>> registerMenuType(String name, IContainerFactory<T> factory) {
         return MENUS.register(name, () -> IMenuTypeExtension.create(factory));
